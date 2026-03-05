@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevSolved | High-Performance Web Solutions</title>
+    <title>QALBSIGHT | High-Performance Engineering</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
         rel="stylesheet">
 
     <script>
@@ -16,12 +16,13 @@
             theme: {
                 extend: {
                     colors: {
+                        cream: '#fffae9',
                         navy: {
+                            950: '#050C16',
                             900: '#0A192F',
                             800: '#112240',
-                            700: '#1d2d50',
                         },
-                        offwhite: '#fff9e5',
+                        accent: '#1e40af',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -32,202 +33,303 @@
         }
     </script>
     <style>
-        .text-balance {
-            text-wrap: balance;
+        body {
+            background-color: #fffae9;
         }
 
-        .kerning-tight {
-            letter-spacing: -0.02em;
+        .masonry-grid {
+            display: block;
+            column-gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+
+        .break-inside {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        @media (min-width: 1024px) {
+            .hover-lift:hover {
+                transform: translateY(-8px);
+            }
         }
     </style>
 </head>
 
-<body class="bg-offwhite text-navy-900 font-sans antialiased">
+<body class="text-navy-900 font-sans antialiased overflow-x-hidden">
 
-    <nav class="flex justify-between items-center p-8 max-w-7xl mx-auto">
-        <div class="font-display text-2xl font-black tracking-tighter">
-            DEV<span class="text-blue-700 italic">SOLVED.</span>
-        </div>
-        <div class="hidden md:flex gap-8 items-center text-sm font-semibold uppercase tracking-widest">
-            <a href="#services" class="hover:text-blue-700 transition">Services</a>
-            <a href="#work" class="hover:text-blue-700 transition">Portfolio</a>
+    <nav class="sticky top-0 z-50 bg-cream/80 backdrop-blur-md border-b border-navy-900/5">
+        <div class="flex justify-between items-center px-6 md:px-8 py-6 max-w-7xl mx-auto">
+            <div class="font-display text-2xl md:text-3xl font-black tracking-tighter uppercase">
+                QALB<span class="text-accent italic lowercase">sight.</span>
+            </div>
+            <div class="hidden md:flex gap-10 items-center text-[10px] font-bold uppercase tracking-[0.3em]">
+                <a href="#services" class="hover:text-accent transition">The Craft</a>
+                <a href="#work" class="hover:text-accent transition">Archives</a>
+                <a href="#contact"
+                    class="bg-navy-900 text-cream px-6 py-3 rounded-full hover:bg-accent transition shadow-lg">Contact</a>
+            </div>
             <a href="#contact"
-                class="bg-navy-900 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition">Consultation</a>
+                class="md:hidden text-accent uppercase text-[10px] font-black tracking-widest border-b-2 border-accent">Inquire</a>
         </div>
     </nav>
 
-    <header class="max-w-7xl mx-auto px-6 py-20 lg:py-32">
-        <div class="flex flex-col lg:flex-row items-center gap-12">
-            <div class="lg:w-3/4">
-                <span class="inline-block mb-4 text-blue-700 font-bold uppercase tracking-[0.2em] text-sm">Web
-                    Architecture & UX</span>
-                <h1 class="font-display text-6xl lg:text-8xl font-black leading-[1.1] mb-8 kerning-tight text-balance">
-                    I build websites that <span class="italic text-blue-800">convert</span> visitors into customers.
+    <header class="max-w-7xl mx-auto px-6 py-16 md:py-32 lg:py-48">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-8 text-left">
+                <p
+                    class="text-accent font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-6 italic underline decoration-1 underline-offset-4">
+                    Visionary Engineering</p>
+                <h1
+                    class="font-display text-5xl md:text-7xl lg:text-[8.5rem] font-black leading-[0.9] mb-8 md:mb-12 tracking-tighter">
+                    Built for <br><span class="text-accent italic">Performance.</span>
                 </h1>
-                <p class="text-xl lg:text-2xl text-slate-600 mb-10 max-w-2xl leading-relaxed font-light">
-                    Stop losing revenue to slow, outdated sites. I deliver high-performance, SEO-optimized web apps in
-                    <span class="font-semibold text-navy-900 underline decoration-blue-500 underline-offset-4">weeks,
-                        not months.</span>
+                <p class="text-lg md:text-2xl text-navy-800/70 mb-10 md:mb-16 max-w-xl font-light leading-relaxed">
+                    At <span class="text-navy-900 font-semibold">Qalbsight</span>, we engineer bespoke digital solutions
+                    for brands that demand absolute precision and speed.
                 </p>
-                <div class="flex flex-col sm:row gap-6">
+                <div class="flex flex-col sm:row gap-8">
                     <a href="#contact"
-                        class="inline-block bg-navy-900 text-white px-10 py-5 rounded-sm text-lg font-bold hover:bg-blue-900 transition-all shadow-2xl">
-                        Start Your Project Today
+                        class="group flex items-center justify-center sm:justify-start gap-4 text-navy-900 font-bold uppercase tracking-widest text-sm">
+                        <span>Initiate Project</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-2 transition-transform"></i>
                     </a>
+                </div>
+            </div>
+            <div class="lg:col-span-4 relative hidden lg:block">
+                <div
+                    class="aspect-[4/5] bg-navy-900 rounded-tr-[80px] flex flex-col items-center justify-center p-12 text-cream">
+                    <p class="text-center font-display text-5xl italic mb-2 tracking-tighter">15<span
+                            class="text-xl">ms</span></p>
+                    <p class="text-[10px] uppercase tracking-widest opacity-60 font-bold">Latency Floor</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="bg-navy-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            <div class="border-r border-navy-800 last:border-0">
-                <p class="font-display text-5xl font-bold mb-2">100%</p>
-                <p class="text-blue-400 uppercase tracking-widest text-xs font-bold">On-Time Delivery</p>
+    <section class="max-w-7xl mx-auto px-6 py-12 md:py-20 border-y border-navy-900/5">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left">
+            <div>
+                <p class="font-display text-4xl md:text-5xl font-bold italic text-accent">40+</p>
+                <p class="text-[9px] md:text-[10px] uppercase tracking-widest font-bold mt-2 opacity-60">Success Stories
+                </p>
             </div>
-            <div class="border-r border-navy-800 last:border-0">
-                <p class="font-display text-5xl font-bold mb-2">40+</p>
-                <p class="text-blue-400 uppercase tracking-widest text-xs font-bold">Projects Completed</p>
+            <div class="border-l border-navy-900/10 md:border-l-0 pl-8 md:pl-0">
+                <p class="font-display text-4xl md:text-5xl font-bold italic text-accent">100%</p>
+                <p class="text-[9px] md:text-[10px] uppercase tracking-widest font-bold mt-2 opacity-60">Bespoke Code
+                </p>
             </div>
-            <div class="border-r border-navy-800 last:border-0">
-                <p class="font-display text-5xl font-bold mb-2">15<span class="text-2xl">ms</span></p>
-                <p class="text-blue-400 uppercase tracking-widest text-xs font-bold">Avg. Response Time</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="max-w-7xl mx-auto px-6 py-32">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
-            <h2 class="font-display text-5xl font-bold leading-tight">Elevating your <br>digital presence</h2>
-            <p class="text-slate-500 max-w-sm mb-2">Expertise in modern frontend frameworks and performance-first
-                architecture.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-12">
-            <div class="group">
-                <div
-                    class="w-12 h-12 bg-blue-50 flex items-center justify-center rounded-lg mb-6 group-hover:bg-blue-600 transition-colors">
-                    <i data-lucide="zap" class="text-blue-600 group-hover:text-white transition-colors"></i>
-                </div>
-                <h3 class="font-display text-2xl font-bold mb-4">Performance First</h3>
-                <p class="text-slate-600 leading-relaxed">I eliminate the friction that kills conversion rates, ensuring
-                    your site loads before the user can blink.</p>
-            </div>
-            <div class="group">
-                <div
-                    class="w-12 h-12 bg-blue-50 flex items-center justify-center rounded-lg mb-6 group-hover:bg-blue-600 transition-colors">
-                    <i data-lucide="shopping-cart" class="text-blue-600 group-hover:text-white transition-colors"></i>
-                </div>
-                <h3 class="font-display text-2xl font-bold mb-4">Custom Commerce</h3>
-                <p class="text-slate-600 leading-relaxed">Scalable online stores that don't look like templates. Built
-                    for high-volume sales and seamless UX.</p>
-            </div>
-            <div class="group">
-                <div
-                    class="w-12 h-12 bg-blue-50 flex items-center justify-center rounded-lg mb-6 group-hover:bg-blue-600 transition-colors">
-                    <i data-lucide="layout" class="text-blue-600 group-hover:text-white transition-colors"></i>
-                </div>
-                <h3 class="font-display text-2xl font-bold mb-4">SaaS Engineering</h3>
-                <p class="text-slate-600 leading-relaxed">Complex business logic translated into elegant, functional
-                    interfaces that users actually enjoy using.</p>
+            <div class="hidden md:block">
+                <p class="font-display text-4xl md:text-5xl font-bold italic text-accent">1.0s</p>
+                <p class="text-[10px] uppercase tracking-widest font-bold mt-2 opacity-60">LCP Average</p>
             </div>
         </div>
     </section>
 
-    <section id="work" class="bg-white py-32 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="font-display text-5xl font-bold mb-4">Client Success Stories</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+    <section id="services" class="max-w-7xl mx-auto px-6 py-24 md:py-40">
+        <div class="grid md:grid-cols-3 gap-16 md:gap-24">
+            <div class="space-y-6">
+                <i data-lucide="fingerprint" class="w-10 h-10 text-accent"></i>
+                <h3 class="font-display text-2xl md:text-3xl font-bold italic">Bespoke UI</h3>
+                <p class="font-light text-navy-800/70 leading-relaxed text-base">No generic templates. We build
+                    specialized interfaces that align with your unique business vision.</p>
+            </div>
+            <div class="space-y-6">
+                <i data-lucide="wind" class="w-10 h-10 text-accent"></i>
+                <h3 class="font-display text-2xl md:text-3xl font-bold italic">Speed Optimization</h3>
+                <p class="font-light text-navy-800/70 leading-relaxed text-base">We prioritize Core Web Vitals to ensure
+                    your site is favorited by both users and search engines.</p>
+            </div>
+            <div class="space-y-6">
+                <i data-lucide="shield-check" class="w-10 h-10 text-accent"></i>
+                <h3 class="font-display text-2xl md:text-3xl font-bold italic">System Security</h3>
+                <p class="font-light text-navy-800/70 leading-relaxed text-base">Hardened architectures designed to
+                    protect your data and scale as you grow.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="px-6 pb-24 md:pb-40">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 md:mb-24 text-center md:text-left">
+                <h2 class="font-display text-5xl md:text-7xl font-black mb-4 italic tracking-tighter">The Archives.</h2>
+                <p class="text-[10px] uppercase tracking-[0.4em] font-bold opacity-60">Client Feedback & Project Hub</p>
             </div>
 
-            <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-                <div
-                    class="break-inside-avoid bg-offwhite p-10 border border-slate-100 shadow-sm relative overflow-hidden group">
-                    <div
-                        class="absolute top-0 left-0 w-1 h-full bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="masonry-grid">
+                <div class="break-inside bg-white p-8 md:p-12 border border-navy-900/5 hover-lift shadow-sm group">
+                    <div class="flex justify-between items-start mb-10">
+                        <span
+                            class="text-[9px] font-black tracking-widest uppercase text-accent border border-accent/20 px-2 py-1">Education</span>
+                        <a href="https://example.com" target="_blank"
+                            class="text-navy-900/20 group-hover:text-accent transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+                        </a>
                     </div>
-                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-700">EdTech / Web
-                        App</span>
-                    <div class="mt-6">
-                        <p class="text-navy-900 leading-relaxed font-light italic text-lg line-clamp-4" id="text-a">
-                            "Chand guided us throughout the process and developed a website that truly reflects our
-                            vision. The design is clean, modern, and very easy for students to use. What we appreciated
-                            most was his ability to understand our requirements and turn them into something unique."
-                        </p>
+                    <p class="text-lg font-light italic leading-relaxed mb-8 line-clamp-4" id="text-a">"Qalbsight
+                        developed a website that truly reflects our vision and professionalism. The design is clean,
+                        modern, and very easy for students to use."</p>
+                    <div class="flex items-center justify-between mt-10 pt-8 border-t border-navy-900/5">
+                        <p class="font-display font-bold text-lg">Academic Lead</p>
                         <button onclick="toggleReadMore('a')" id="btn-a"
-                            class="text-navy-900 font-bold text-xs mt-4 uppercase tracking-widest border-b border-navy-900 pb-1">Read
-                            Story</button>
-                    </div>
-                    <div class="mt-8 pt-6 border-t border-slate-200 flex items-center justify-between">
-                        <p class="font-display font-bold">Institution Leader</p>
-                        <i data-lucide="quote" class="text-slate-200"></i>
+                            class="text-[9px] font-bold uppercase border-b border-navy-900">Read More</button>
                     </div>
                 </div>
 
-                <div class="break-inside-avoid bg-navy-900 text-white p-10 shadow-2xl">
-                    <span
-                        class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">Direct-to-Consumer</span>
-                    <div class="mt-6">
-                        <p class="leading-relaxed font-light italic text-xl" id="text-c">
-                            "I wanted to take my attar business online. Chand suggested a solution that perfectly
-                            matched my budget while giving my customers a professional experience. Since launching, I’ve
-                            started receiving consistent online orders."
-                        </p>
+                <div class="break-inside bg-navy-900 text-cream p-8 md:p-12 shadow-2xl hover-lift group">
+                    <div class="flex justify-between items-start mb-10">
+                        <span
+                            class="text-[9px] font-black tracking-widest uppercase text-blue-400 border border-blue-400/20 px-2 py-1">SaaS</span>
+                        <a href="https://example.com" target="_blank"
+                            class="text-white/20 group-hover:text-blue-400 transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+                        </a>
                     </div>
-                    <div class="mt-8 pt-6 border-t border-navy-800 flex items-center justify-between">
-                        <div>
-                            <p class="font-display font-bold text-lg text-white">Fragrance Shop</p>
-                            <p class="text-xs text-blue-400 uppercase tracking-widest">E-commerce Success</p>
-                        </div>
+                    <p class="text-lg font-light italic leading-relaxed mb-8 line-clamp-4" id="text-b">"We were looking
+                        for a reliable solution to manage our community. The application is smooth, practical, and has
+                        simplified our daily operations significantly."</p>
+                    <div class="flex items-center justify-between mt-10 pt-8 border-t border-white/10">
+                        <p class="font-display font-bold text-lg">Product Manager</p>
+                        <button onclick="toggleReadMore('b')" id="btn-b"
+                            class="text-[9px] font-bold uppercase border-b border-white">Read More</button>
                     </div>
                 </div>
 
+                <div class="break-inside bg-white p-8 md:p-12 border border-navy-900/5 hover-lift shadow-sm group">
+                    <div class="flex justify-between items-start mb-10">
+                        <span
+                            class="text-[9px] font-black tracking-widest uppercase text-accent border border-accent/20 px-2 py-1">E-com</span>
+                        <a href="https://example.com" target="_blank"
+                            class="text-navy-900/20 group-hover:text-accent transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                    <p class="text-lg font-light italic leading-relaxed mb-8 line-clamp-4" id="text-c">"A professional
+                        online shopping experience that matched my budget perfectly. Since launching, I’ve started
+                        receiving consistent online orders."</p>
+                    <div class="flex items-center justify-between mt-10 pt-8 border-t border-navy-900/5">
+                        <p class="font-display font-bold text-lg">Founder</p>
+                        <button onclick="toggleReadMore('c')" id="btn-c"
+                            class="text-[9px] font-bold uppercase border-b border-navy-900">Read More</button>
+                    </div>
+                </div>
+
+                <div class="break-inside bg-white p-8 md:p-12 border border-navy-900/5 hover-lift shadow-sm group">
+                    <div class="flex justify-between items-start mb-10">
+                        <span
+                            class="text-[9px] font-black tracking-widest uppercase text-accent border border-accent/20 px-2 py-1">Creative</span>
+                        <a href="https://example.com" target="_blank"
+                            class="text-navy-900/20 group-hover:text-accent transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                    <p class="text-lg font-light italic leading-relaxed mb-8 line-clamp-4" id="text-d">"I needed a
+                        portfolio that could professionally showcase my work. Qalbsight understood my vision and brought
+                        it to life beautifully."</p>
+                    <div class="flex items-center justify-between mt-10 pt-8 border-t border-navy-900/5">
+                        <p class="font-display font-bold text-lg">Video Editor</p>
+                        <button onclick="toggleReadMore('d')" id="btn-d"
+                            class="text-[9px] font-bold uppercase border-b border-navy-900">Read More</button>
+                    </div>
+                </div>
+
+                <div class="break-inside bg-accent text-cream p-8 md:p-12 shadow-xl hover-lift group">
+                    <div class="flex justify-between items-start mb-10">
+                        <span
+                            class="text-[9px] font-black tracking-widest uppercase text-white border border-white/20 px-2 py-1">Strategy</span>
+                        <a href="https://example.com" target="_blank"
+                            class="text-white/20 group-hover:text-white transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                    <p class="text-lg font-light italic leading-relaxed mb-8 line-clamp-4" id="text-e">"The clean and
+                        structured layout makes navigation effortless. Visitors find what they need without feeling
+                        overwhelmed."</p>
+                    <div class="flex items-center justify-between mt-10 pt-8 border-t border-white/10">
+                        <p class="font-display font-bold text-lg">UX Owner</p>
+                        <button onclick="toggleReadMore('e')" id="btn-e"
+                            class="text-[9px] font-bold uppercase border-b border-white">Read More</button>
+                    </div>
+                </div>
+
+                <div class="break-inside bg-white p-8 md:p-12 border border-navy-900/5 hover-lift shadow-sm group">
+                    <div class="flex justify-between items-start mb-10">
+                        <span
+                            class="text-[9px] font-black tracking-widest uppercase text-accent border border-accent/20 px-2 py-1">Media</span>
+                        <a href="https://example.com" target="_blank"
+                            class="text-navy-900/20 group-hover:text-accent transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                    <p class="text-lg font-light italic leading-relaxed mb-8 line-clamp-4" id="text-f">"A website that
+                        properly showcases our content and reaches a wider audience. The process was seamless and the
+                        support was excellent."</p>
+                    <div class="flex items-center justify-between mt-10 pt-8 border-t border-navy-900/5">
+                        <p class="font-display font-bold text-lg">Managing Editor</p>
+                        <button onclick="toggleReadMore('f')" id="btn-f"
+                            class="text-[9px] font-bold uppercase border-b border-navy-900">Read More</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="bg-navy-900 text-white py-32">
+    <section id="contact" class="bg-navy-900 text-cream py-24 md:py-40">
         <div class="max-w-4xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-20">
-                <div>
-                    <h2 class="font-display text-6xl font-bold mb-8">Let's talk <span
-                            class="text-blue-500 italic">growth.</span></h2>
-                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                        Whether you're starting from scratch or need a performance overhaul, I'm here to help.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center">
-                                <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
-                            </div>
-                            <span class="font-medium">hello@devsolved.com</span>
-                        </div>
+            <div class="text-center mb-16 md:mb-24">
+                <h2 class="font-display text-5xl md:text-8xl font-black mb-6 italic tracking-tighter">Let's create.</h2>
+                <p class="text-lg font-light opacity-60">Consult with Qalbsight for your next project.</p>
+            </div>
+            <form class="grid md:grid-cols-2 gap-12 md:gap-16">
+                <div class="space-y-10">
+                    <div class="group border-b border-white/10 focus-within:border-accent transition-colors">
+                        <label
+                            class="block text-[10px] uppercase tracking-widest font-bold text-blue-400 mb-2">Identifier</label>
+                        <input type="text" placeholder="Full Name"
+                            class="w-full bg-transparent py-2 focus:outline-none text-xl font-light">
+                    </div>
+                    <div class="group border-b border-white/10 focus-within:border-accent transition-colors">
+                        <label
+                            class="block text-[10px] uppercase tracking-widest font-bold text-blue-400 mb-2">Communication</label>
+                        <input type="email" placeholder="Email Address"
+                            class="w-full bg-transparent py-2 focus:outline-none text-xl font-light">
                     </div>
                 </div>
-                <form class="space-y-6">
-                    <div class="border-b border-navy-700 pb-2">
-                        <label class="block text-[10px] uppercase tracking-widest text-slate-500 mb-2">Name</label>
-                        <input type="text" class="w-full bg-transparent focus:outline-none text-xl font-light">
-                    </div>
-                    <div class="border-b border-navy-700 pb-2">
-                        <label class="block text-[10px] uppercase tracking-widest text-slate-500 mb-2">Email</label>
-                        <input type="email" class="w-full bg-transparent focus:outline-none text-xl font-light">
-                    </div>
-                    <div class="border-b border-navy-700 pb-2">
-                        <label class="block text-[10px] uppercase tracking-widest text-slate-500 mb-2">Project
-                            Details</label>
-                        <textarea rows="3"
-                            class="w-full bg-transparent focus:outline-none text-xl font-light"></textarea>
+                <div class="space-y-10">
+                    <div class="group border-b border-white/10 focus-within:border-accent transition-colors">
+                        <label
+                            class="block text-[10px] uppercase tracking-widest font-bold text-blue-400 mb-2">Vision</label>
+                        <textarea rows="1" placeholder="Project Brief"
+                            class="w-full bg-transparent py-2 focus:outline-none text-xl font-light"></textarea>
                     </div>
                     <button
-                        class="bg-blue-700 text-white px-8 py-4 w-full font-bold uppercase tracking-widest hover:bg-blue-600 transition-colors">
-                        Send Inquiry
-                    </button>
-                </form>
-            </div>
+                        class="w-full bg-accent hover:bg-white hover:text-navy-900 text-white py-6 font-bold uppercase tracking-[0.3em] transition-all">Submit
+                        Brief</button>
+                </div>
+            </form>
         </div>
     </section>
+
+    <footer class="py-12 text-center text-navy-900/40 text-[9px] font-bold uppercase tracking-[0.3em]">
+        © 2026 QALBSIGHT LABORATORIES — All Rights Reserved.
+    </footer>
 
     <script>
         lucide.createIcons();
@@ -241,7 +343,7 @@
                 btnElement.innerText = 'Show Less';
             } else {
                 textElement.classList.add('line-clamp-4');
-                btnElement.innerText = 'Read Story';
+                btnElement.innerText = 'Read More';
             }
         }
     </script>
